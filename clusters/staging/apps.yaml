@@ -14,3 +14,6 @@ spec:
     name: flux-system
   path: ./apps/staging
   prune: true
+  provider: sops
+  secretRef:
+    name: sops-age
