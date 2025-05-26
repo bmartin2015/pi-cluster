@@ -6,7 +6,7 @@ metadata:
 spec:
   interval: 1m0s
   # dependsOn:
-  #   - name: infra-config
+  #   - name: infra-configs
   retryInterval: 1m
   timeout: 5m
   sourceRef:
@@ -14,6 +14,7 @@ spec:
     name: flux-system
   path: ./apps/staging
   prune: true
-  provider: sops
-  secretRef:
-    name: sops-age
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-age
